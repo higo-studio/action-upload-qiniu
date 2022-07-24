@@ -22,7 +22,8 @@ async function run(): Promise<void> {
       () => core.info("Done!"),
       (error) => core.setFailed(error.message)
     );
-  } catch (error: any) {
+    //@ts-ignore
+  } catch (error: Error) {
     core.setFailed(error.message);
   }
 }
